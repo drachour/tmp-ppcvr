@@ -107,6 +107,14 @@ const Experience = () => {
                 <p>W3Schools</p>
               </SingleBox>
             </BoxGrid>
+            <BoxGrid>     
+              <SingleBox>
+                <Duration>05/2022</Duration>
+                <Title>IT Essentials</Title>
+                <p>Cisco - Networking Academy</p>
+              </SingleBox>
+              <EmptyBoxRight></EmptyBoxRight>
+            </BoxGrid>
           </ColMd6>
           <ColMd6>
             <SectionTitle>Experience</SectionTitle>
