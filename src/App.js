@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
-import Experience from './pages/Experience';
+import Experience from './components/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Modal from './components/common/Modal';

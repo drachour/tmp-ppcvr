@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import myImage from '../assets/images/backCoverDiscord-removebg-preview.png';
+import Experience from '../components/Experience';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -194,11 +195,12 @@ const About = () => {
                     </SingleBox>
                     <SingleBox>
                         <PartIcon><i className="fas fa-mug-hot"></i></PartIcon>
-                        <Count>2034+</Count>
+                        <Count>2 031 423+</Count>
                         <Description>Cups Of Tea</Description>
                     </SingleBox>
                 </Row>
             </DividerContainer>
+            <Experience />
         </AboutContainer>
     );
 };

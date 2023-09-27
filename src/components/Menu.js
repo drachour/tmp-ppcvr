@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Lozenge } from './common/Lozenge';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import Experience from '../pages/Experience';
+import Experience from './Experience';
 import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
 
