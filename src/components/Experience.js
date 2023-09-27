@@ -36,6 +36,7 @@ const SingleBox = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-items: center;
+  width: 390px;
 `;
 
 const Duration = styled.p`
@@ -97,6 +98,14 @@ const Experience = () => {
                 <p>Collège Lasalle, Montréal, Québec</p>
               </SingleBox>
               <EmptyBox></EmptyBox>
+            </BoxGrid>
+            <BoxGrid>         
+            <EmptyBoxLeft></EmptyBoxLeft>
+              <SingleBox>
+                <Duration>10/2022</Duration>
+                <Title>C# Certificate Of Completion</Title>
+                <p>W3Schools</p>
+              </SingleBox>
             </BoxGrid>
           </ColMd6>
           <ColMd6>
