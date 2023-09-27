@@ -5,9 +5,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Skills from './pages/Skills';
-import Experience from './components/Experience';
-import Projects from './pages/Projects';
+import Service from './pages/Service';
+import Gallery from './pages/Gallery';
+import Portfolio from './pages/Portfolio';
+import Faq from './pages/Faq';
 import Contact from './pages/Contact';
 import Modal from './components/common/Modal';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,10 +45,11 @@ function App() {
         <Routes>
           <Route index element={<Home openModal={openModal} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
 
         {isModalOpen && <Modal show={isModalOpen} onClose={closeModal}>{modalContent}</Modal>}

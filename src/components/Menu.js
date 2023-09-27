@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { Lozenge } from './common/Lozenge';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import Experience from './Experience';
-import Projects from '../pages/Projects';
-import Skills from '../pages/Skills';
+import Gallery from '../pages/Gallery';
+import Portfolio from '../pages/Portfolio';
+import Service from '../pages/Service';
+import Faq from '../pages/Faq';
 
 const MenuContainer = styled.div`
   display: flex;
@@ -32,6 +33,10 @@ const StyledLink = styled(Link)`
 `;
 
 const LinkText = styled.span`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transform: rotate(-45deg);
 `;
 
@@ -43,38 +48,38 @@ const Menu = ({ openModal }) => {
   return (
     <MenuContainer>
         <Row>
-            <Lozenge>
-                <StyledLink to="/">
-                    <LinkText>Home</LinkText>
+            <Lozenge onClick={() => handleMenuItemClick(<About/>)}>
+                <StyledLink>
+                    <LinkText><i class="bi bi-person-circle"></i> ABOUT</LinkText>
                 </StyledLink>
             </Lozenge>
-            <Lozenge onClick={() => handleMenuItemClick(<Skills/>)}>
+            <Lozenge onClick={() => handleMenuItemClick(<Service/>)}>
                 <StyledLink>
-                    <LinkText>Skills</LinkText>
+                    <LinkText><i class="bi bi-gear"></i> SERVICE</LinkText>
                 </StyledLink>
             </Lozenge>
-            <Lozenge onClick={() => handleMenuItemClick(<Projects/>)}>
+            <Lozenge onClick={() => handleMenuItemClick(<Faq/>)}>
                 <StyledLink>
-                    <LinkText>Projects</LinkText>
+                    <LinkText><i class="bi bi-info-circle"></i> FAQ</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>
         <Row>
-            <Lozenge onClick={() => handleMenuItemClick(<About/>)}>
+            <Lozenge onClick={() => handleMenuItemClick(<Portfolio/>)}>
                 <StyledLink>
-                    <LinkText>About</LinkText>
+                    <LinkText><i class="bi bi-folder"></i>PORTFOLIO</LinkText>
                 </StyledLink>
             </Lozenge>
-            <Lozenge onClick={() => handleMenuItemClick(<Experience/>)}>
+            <Lozenge onClick={() => handleMenuItemClick(<Gallery/>)}>
                 <StyledLink>
-                    <LinkText>Experience</LinkText>
+                    <LinkText><i class="bi bi-image"></i>GALLERY</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>
         <Row>
             <Lozenge onClick={() => handleMenuItemClick(<Contact />)}>
                 <StyledLink>
-                    <LinkText>Contact</LinkText>
+                    <LinkText><i class="bi bi-person-plus"></i>CONTACT</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>

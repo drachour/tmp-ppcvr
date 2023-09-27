@@ -7,7 +7,7 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 10rem);
   background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 `;
 

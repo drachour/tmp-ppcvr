@@ -7,10 +7,10 @@ const ModalWrapper = styled.div.attrs((props) => ({
   },
 }))`
   position: fixed;
-  top: 15%;
-  left: 10%;
-  width: 80%;
-  height: 75%;
+  top: 9%;
+  left: 3%;
+  width: 94%;
+  height: 85%;
   background-color: rgba(0, 0, 0, 0.8);
   align-items: center;
   justify-content: center;
@@ -48,8 +48,8 @@ const ModalContent = styled.div`
 
 const CloseButton = styled.button`
   position: fixed;
-  top: 15%;
-  right: 11%;
+  top: 9%;
+  right: 3.8%;
   width: 30px;
   height: 30px;
   background: linear-gradient(to bottom right, #4a90e2, #8e44ad);
