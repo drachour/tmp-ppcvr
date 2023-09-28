@@ -13,6 +13,7 @@ const ModalWrapper = styled.div.attrs((props) => ({
   height: 85%;
   background-color: rgba(0, 0, 0, 0.8);
   align-items: center;
+  border-radius: 10px;
   justify-content: center;
   z-index: 9999;
   
@@ -37,12 +38,13 @@ const ModalWrapper = styled.div.attrs((props) => ({
 
 
 const ModalContent = styled.div`
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #214150, #203a43, #3a6c82); 
   width: 100%;
   height: 100%;
   overflow: auto;
   position: relative;
   z-index: 10000;
+  border-radius: 10px;
 `;
 
 

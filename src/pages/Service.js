@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CardPrice from '../components/CardPrice';
 
 const ServiceSection = styled.div`
-  background-color: #0f2027;
+background: linear-gradient(to right, #214150, #203a43, #3a6c82);
   padding: 4rem 0;
   color: #fff;
 `;

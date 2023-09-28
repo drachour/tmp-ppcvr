@@ -9,7 +9,8 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #214150, #203a43, #3a6c82);
+  border-radius: 10px;
 `;
 
 const TopContainer = styled.div`
