@@ -13,7 +13,7 @@ const FooterContainer = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      Copyright © 2023 | Developed by Gael Achour
+      Copyright © 2023 | Aurora Technologie Système
     </FooterContainer>
   );
 };

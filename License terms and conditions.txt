@@ -1,0 +1,89 @@
+Aurora Technologie Système Proprietary Software License Agreement
+Version 1.0, September 14, 2023
+PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY BEFORE USING THE SOFTWARE. BY USING THE SOFTWARE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE.
+
+1. Definitions
+"The Software" refers to the proprietary software provided with this License.
+"The Company" refers to Aurora Technologie Système.
+
+2. Grant of License
+Subject to the terms and conditions of this License, The Company grants you a limited, non-exclusive license to use the Software only for internal business operations and not for any other purpose.
+
+3. Restrictions
+a) You may not distribute, share, or allow others to use the Software in any format.
+b) You may not modify, decompile, or reverse engineer the Software.
+c) You may not claim ownership or resell the Software.
+
+4. Ownership
+The Software, including any modifications, enhancements, or updates, is owned by The Company and is protected by copyright laws and international treaty provisions.
+
+5. Termination
+This License will terminate automatically without notice if you violate any terms of this License. Upon termination, you must immediately stop using the Software and destroy all copies of it.
+
+6. Disclaimer of Warranties
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+7. Limitation of Liability
+IN NO EVENT WILL THE COMPANY BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE.
+
+8. Governing Law
+This License is governed by the laws of the Province of Quebec, Canada, without regard to conflict of law principles. Any litigation or dispute resolution related to this License will take place in Quebec, and you consent to the jurisdiction of the courts of Quebec for any such litigation or dispute resolution.
+
+9. Entire Agreement
+This License constitutes the entire agreement between you and The Company and supersedes all prior or contemporaneous understandings regarding such subject matter.
+
+10. Updates and Upgrades
+The Company may provide you with updates or upgrades to the Software at its discretion. These updates and upgrades will be subject to the terms of this License or any updated License provided by the Company.
+
+11. Compliance with Laws
+You shall use the Software in compliance with all applicable local, state, national, and international laws, rules, and regulations.
+
+12. Third-Party Components
+The Software may include third-party software components that are subject to their own licensing terms. You agree to comply with such third-party license terms.
+
+13. Data Collection and Privacy
+By using the Software, you consent to any data collection and usage, as outlined in the Company's privacy policy, which can be found at [Insert Privacy Policy URL].
+
+14. Export Control
+You may not export or re-export the Software except in compliance with applicable export laws and any other governmental regulations.
+
+15. Assignment
+You may not assign your rights or obligations under this License without the prior written consent of the Company.
+
+16. Severability
+If any provision of this License is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that this License shall otherwise remain in full force and effect and enforceable.
+
+17. Amendments
+The Company reserves the right to modify or amend this License at its own discretion. Any such changes will be posted on the Company's website or delivered through the Software itself.
+
+18. Contact Information
+For questions about this License or for further information, please contact:
+Aurora Technologie Système
+Contact@atsys.ca
+
+19. Audit Rights
+The Company reserves the right to audit your use of the Software to ensure compliance with this License. Any such audit will be conducted during regular business hours and in a manner that does not unreasonably interfere with your business operations.
+
+20. Indemnification
+You agree to indemnify, defend, and hold harmless The Company against any and all claims, liabilities, damages, costs, and expenses, including reasonable attorney's fees, arising out of or in any way connected with your use of the Software in violation of this License.
+
+21. Force Majeure
+Neither party shall be in default or otherwise liable for any delay in or failure of its performance under this License if such delay or failure arises by any reason beyond its reasonable control, including any act of God, any acts of the common enemy, the elements, earthquakes, floods, fires, epidemics, riots, failures or delays in transportation or communications.
+
+22. No Waiver
+The failure by either party to enforce any provision of this License will not constitute a waiver of future enforcement of that or any other provision.
+
+23. Notices
+All notices required to be sent to The Company under this License should be sent via email to [Company Email]. All notices to you will be sent via email to the address you have provided to The Company.
+
+24. Non-Compete
+You agree not to engage in the development, marketing, or distribution of any software substantially similar to the Software for a period of [Insert Time Period, e.g., 12 months] following the termination of this License.
+
+25. Survival
+Sections 4 (Ownership), 6 (Disclaimer of Warranties), 7 (Limitation of Liability), and 20 (Indemnification) shall survive any termination or expiration of this License.
+
+26. Interpretation
+In the event that any provision of this License is found to be ambiguous, such provision shall be interpreted as closely as possible to the intent of the parties, as determined by the court in the appropriate jurisdiction.
+
+27. Dispute Resolution
+Any disputes arising out of or in connection with this License shall be subject to the exclusive jurisdiction of the courts of the Province of Quebec, Canada.

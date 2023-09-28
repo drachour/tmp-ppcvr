@@ -1,0 +1,13 @@
+Proprietary Software License
+
+Copyright (c) 2023 Aurora Technologie Système
+
+All Rights Reserved
+
+Unauthorized copying, modification, distribution, public display, or public performance of this software is strictly prohibited. 
+
+This software is provided "as-is" without any warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+Use of this software must comply with all the terms specified by Aurora Technologie Système, and may only be used for internal business purposes. 
+
+For full license terms and conditions, please contact Aurora Technologie Système.
