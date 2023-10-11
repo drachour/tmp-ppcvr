@@ -7,17 +7,22 @@ my-portfolio/
 │   │   ├── images/
 │   │   └── styles/
 │   ├── components/
-│   │   ├── Header.js
-│   │   ├── Footer.js
-│   │   ├── Skills.js
+│   │   ├── common/
+│   │   │   ├── Lozenge.js
+│   │   │   └── Modal.js
+│   │   ├── CardPrice.js
 │   │   ├── Experience.js
-│   │   ├── Education.js
-│   │   └── ...
+│   │   ├── Footer.js
+│   │   ├── Header.js
+│   │   └── Menu.js
 │   ├── pages/
-│   │   ├── Home.js
 │   │   ├── About.js
-│   │   ├── Projects.js
-│   │   └── Contact.js
+│   │   ├── Contact.js
+│   │   ├── Faq.js
+│   │   ├── Gallery.js
+│   │   ├── Home.js
+│   │   ├── Portfolio.js
+│   │   └── Service.js
 │   ├── App.js
 │   ├── App.css
 │   └── index.js
