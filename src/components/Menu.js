@@ -30,6 +30,9 @@ const StyledLink = styled(Link)`
   height: 100px;
   margin: 0px;
   background-color: transparent;
+  &:hover {
+    color: lime;
+  }
 `;
 
 const LinkText = styled.span`
