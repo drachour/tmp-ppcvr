@@ -200,7 +200,7 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>+1 438 391-2197</span>
+              <span>+1 555 555-5555</span>
             </TextInfo>
           </SingleBox>
           <SingleBox>
@@ -212,8 +212,8 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>contact@atsys.ca</span>
-              <span>support@atsys.ca</span>
+              <span>contact@exemple.ca</span>
+              <span>support@exemple.ca</span>
             </TextInfo>
           </SingleBox>
           <SingleBox>
@@ -225,8 +225,8 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>2 Rte 223, Lacolle, Québec</span>
-              <span>J0J 1J0, Canada</span>
+              <span>1 Rang, Montréal, Québec</span>
+              <span>E0E E0E, Canada</span>
             </TextInfo>
           </SingleBox>
         </ContactInformation>
