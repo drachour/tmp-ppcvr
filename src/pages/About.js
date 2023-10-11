@@ -4,6 +4,8 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import myImage from '../assets/images/backCoverDiscord-removebg-preview.png';
 import Experience from '../components/Experience';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -107,103 +109,105 @@ const Description = styled.p`
 `;
 
 const About = () => {
-    return (
-        <AboutContainer>
-            <TopContainer>
-                <Column>
-                    <AboutImage src={myImage} alt="About Me" />
-                </Column>
-                <Column>
-                    <TitleWrapper>
-                        <AboutTitle>About</AboutTitle>
-                        <GradientTextTitle>Me</GradientTextTitle>
-                    </TitleWrapper>
-                    <AboutText>
-                        I'm a professional back-end developer.
-                        <br />
-                        My motive is to build the best web or app developer with my years of experience.
-                    </AboutText>
-                    <SkillContainer>
-                        <Skill>
-                            <CircularProgressbar
-                                value={75}
-                                text={`Graphics ${75}%`}
-                                styles={buildStyles({
-                                    textSize: "10px",
-                                    textColor: "#ffffff",
-                                    pathColor: "#4a90e2",
-                                    trailColor: "#ffffff"
-                                })}
-                            />
-                        </Skill>
-                        <Skill>
-                            <CircularProgressbar
-                                value={90}
-                                text={`Developing ${90}%`}
-                                styles={buildStyles({
-                                    textSize: "10px",
-                                    textColor: "#ffffff",
-                                    pathColor: "#4a90e2",
-                                    trailColor: "#ffffff"
-                                })}
-                            />
-                        </Skill>
-                    </SkillContainer>
-                    <SkillContainer>
-                        <Skill>
-                            <CircularProgressbar
-                                value={60}
-                                text={`Writing ${60}%`}
-                                styles={buildStyles({
-                                    textSize: "10px",
-                                    textColor: "#ffffff",
-                                    pathColor: "#4a90e2",
-                                    trailColor: "#ffffff"
-                                })}
-                            />
-                        </Skill>
-                        <Skill>
-                            <CircularProgressbar
-                                value={90}
-                                text={`UI/UX ${90}%`}
-                                styles={buildStyles({
-                                    textSize: "10px",
-                                    textColor: "#ffffff",
-                                    pathColor: "#4a90e2",
-                                    trailColor: "#ffffff"
-                                })}
-                            />
-                        </Skill>
-                    </SkillContainer>
-                </Column>
-            </TopContainer>
-            <DividerContainer>
-                <Row>
-                    <SingleBox>
-                        <PartIcon><i className="bi bi-patch-check"></i></PartIcon>
-                        <Count>7+</Count>
-                        <Description>Years Experience</Description>
-                    </SingleBox>
-                    <SingleBox>
-                        <PartIcon><i className="bi bi-list-check"></i></PartIcon>
-                        <Count>10+</Count>
-                        <Description>Project Completed</Description>
-                    </SingleBox>
-                    <SingleBox>
-                        <PartIcon><i className="fas fa-users"></i></PartIcon>
-                        <Count>52+</Count>
-                        <Description>Happy Clients</Description>
-                    </SingleBox>
-                    <SingleBox>
-                        <PartIcon><i className="fas fa-mug-hot"></i></PartIcon>
-                        <Count>2 031 423+</Count>
-                        <Description>Cups Of Tea</Description>
-                    </SingleBox>
-                </Row>
-            </DividerContainer>
-            <Experience />
-        </AboutContainer>
-    );
+  const { language } = React.useContext(LanguageContext);
+  const aboutTranslations = translations[language].about;
+  return (
+    <AboutContainer>
+      <TopContainer>
+        <Column>
+          <AboutImage src={myImage} alt="About Me" />
+        </Column>
+        <Column>
+          <TitleWrapper>
+            <AboutTitle>{aboutTranslations.title}</AboutTitle>
+            <GradientTextTitle>{aboutTranslations.me}</GradientTextTitle>
+          </TitleWrapper>
+          <AboutText>
+            {aboutTranslations.description[0]}
+            <br />
+            {aboutTranslations.description[1]}
+          </AboutText>
+          <SkillContainer>
+            <Skill>
+              <CircularProgressbar
+                value={75}
+                text={`${aboutTranslations.graphicsSkill} ${75}%`}
+                styles={buildStyles({
+                  textSize: "8px",
+                  textColor: "#ffffff",
+                  pathColor: "#4a90e2",
+                  trailColor: "#ffffff"
+                })}
+              />
+            </Skill>
+            <Skill>
+              <CircularProgressbar
+                value={90}
+                text={`${aboutTranslations.developingSkill} ${90}%`}
+                styles={buildStyles({
+                  textSize: "8px",
+                  textColor: "#ffffff",
+                  pathColor: "#4a90e2",
+                  trailColor: "#ffffff"
+                })}
+              />
+            </Skill>
+          </SkillContainer>
+          <SkillContainer>
+            <Skill>
+              <CircularProgressbar
+                value={60}
+                text={`${aboutTranslations.writingSkill} ${60}%`}
+                styles={buildStyles({
+                  textSize: "8px",
+                  textColor: "#ffffff",
+                  pathColor: "#4a90e2",
+                  trailColor: "#ffffff"
+                })}
+              />
+            </Skill>
+            <Skill>
+              <CircularProgressbar
+                value={90}
+                text={`${aboutTranslations.uiuxSkill} ${90}%`}
+                styles={buildStyles({
+                  textSize: "8px",
+                  textColor: "#ffffff",
+                  pathColor: "#4a90e2",
+                  trailColor: "#ffffff"
+                })}
+              />
+            </Skill>
+          </SkillContainer>
+        </Column>
+      </TopContainer>
+      <DividerContainer>
+        <Row>
+          <SingleBox>
+            <PartIcon><i className="bi bi-patch-check"></i></PartIcon>
+            <Count>7+</Count>
+            <Description>{aboutTranslations.yearsExperience}</Description>
+          </SingleBox>
+          <SingleBox>
+            <PartIcon><i className="bi bi-list-check"></i></PartIcon>
+            <Count>10+</Count>
+            <Description>{aboutTranslations.projectCompleted}</Description>
+          </SingleBox>
+          <SingleBox>
+            <PartIcon><i className="fas fa-users"></i></PartIcon>
+            <Count>52+</Count>
+            <Description>{aboutTranslations.happyClients}</Description>
+          </SingleBox>
+          <SingleBox>
+            <PartIcon><i className="fas fa-mug-hot"></i></PartIcon>
+            <Count>2 031 423+</Count>
+            <Description>{aboutTranslations.cupsOfTea}</Description>
+          </SingleBox>
+        </Row>
+      </DividerContainer>
+      <Experience />
+    </AboutContainer>
+  );
 };
 
 export default About;

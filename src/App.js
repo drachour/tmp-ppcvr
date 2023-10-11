@@ -11,6 +11,7 @@ import Portfolio from './pages/Portfolio';
 import Faq from './pages/Faq';
 import Contact from './pages/Contact';
 import Modal from './components/common/Modal';
+import LanguageProvider from './components/resources/LanguageProvider';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -31,32 +32,34 @@ function App() {
     setIsModalOpen(true);
     setModalContent(content);
   };
-  
+
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
   return (
-    <Router>
-      <AppContainer>
-        <Header />
+    <LanguageProvider>
+      <Router>
+        <AppContainer>
+          <Header />
 
-        <Routes>
-          <Route index element={<Home openModal={openModal} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<Faq />} />
-        </Routes>
+          <Routes>
+            <Route index element={<Home openModal={openModal} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Faq />} />
+          </Routes>
 
-        {isModalOpen && <Modal show={isModalOpen} onClose={closeModal}>{modalContent}</Modal>}
-        
-        <Footer />
-      </AppContainer>
-    </Router>
+          {isModalOpen && <Modal show={isModalOpen} onClose={closeModal}>{modalContent}</Modal>}
+
+          <Footer />
+        </AppContainer>
+      </Router>
+    </LanguageProvider>
   );
 }
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import translations from './resources/Translations';
+import LanguageContext from './resources/LanguageContext';
 
 const Container = styled.div`
   display: flex;
@@ -93,70 +95,16 @@ const StartButton = styled.button`
 
 
 const CardPrice = () => {
-  const pricingData = [
-    {
-      title: 'Application Windows',
-      icon: '🖥',
-      items: [
-        { label: 'Basic App', price: '$250.00', unit: '(p/pjct)' },
-        { label: 'Database Integration', price: '$350.00', unit: '(p/pjct)' },
-        { label: 'Advanced Features', price: '$500.00', unit: '(p/pjct)' },
-        { label: 'User Interface Design', price: '$150.00', unit: '(p/pjct)' },
-        { label: 'Security Features', price: '$300.00', unit: '(p/pjct)' }
-      ],
-    },
-    {
-      title: 'Web Development',
-      icon: '💻',
-      items: [
-        { label: 'Front-end Development', price: '$300.00', unit: '(p/pjct)' },
-        { label: 'Back-end Development', price: '$400.00', unit: '(p/pjct)' },
-        { label: 'Full Stack', price: '$600.00', unit: '(p/pjct)' },
-        { label: 'SEO Optimization', price: '$200.00', unit: '(p/pjct)' },
-        { label: 'E-commerce Integration', price: '$500.00', unit: '(p/pjct)' }
-      ],
-    },
-    {
-      title: 'Discord Bot',
-      icon: '🤖',
-      items: [
-        { label: 'Basic Bot', price: '$150.00', unit: '(p/pjct)' },
-        { label: 'Moderation Bot', price: '$250.00', unit: '(p/pjct)' },
-        { label: 'Advanced Bot', price: '$400.00', unit: '(p/pjct)' },
-        { label: 'Music Bot', price: '$300.00', unit: '(p/pjct)' },
-        { label: 'Chat Bot', price: '$350.00', unit: '(p/pjct)' }
-      ],
-    },
-    {
-      title: 'Game Development',
-      icon: '🎮',
-      items: [
-        { label: '2D Game', price: '$500.00', unit: '(p/pjct)' },
-        { label: '3D Game', price: '$1000.00', unit: '(p/pjct)' },
-        { label: 'VR Game', price: '$1500.00', unit: '(p/pjct)' },
-        { label: 'Game Design', price: '$250.00', unit: '(p/pjct)' },
-        { label: 'Level Design', price: '$300.00', unit: '(p/pjct)' }
-      ],
-    },
-    {
-      title: 'Mobile App Development',
-      icon: '📱',
-      items: [
-        { label: 'Android App', price: '$400.00', unit: '(p/pjct)' },
-        { label: 'Cross-Platform', price: '$700.00', unit: '(p/pjct)' },
-        { label: 'UI/UX Design', price: '$300.00', unit: '(p/pjct)' },
-        { label: 'In-App Purchases', price: '$250.00', unit: '(p/pjct)' }
-      ],
-    }
-  ];
-  
+  const { language } = React.useContext(LanguageContext);
+  const cardPriceTranslations = translations[language].cardPrice;
+
   return (
     <Container>
       <SectionTitle>
-        <GradientText>Pricing</GradientText> Plan
+        <GradientText>{cardPriceTranslations.sectionTitle.pricing}</GradientText> {cardPriceTranslations.sectionTitle.plan}
       </SectionTitle>
       <PricingGrid>
-        {pricingData.map((pricing, index) => (
+        {cardPriceTranslations.cards.map((pricing, index) => (
           <PricingCard key={index}>
             <TopSection>
               <Title>{pricing.title}</Title>
@@ -175,7 +123,7 @@ const CardPrice = () => {
               </ItemList>
             </MiddleSection>
             <BottomSection>
-              <StartButton>Start A Project</StartButton>
+              <StartButton>{cardPriceTranslations.startButton}</StartButton>
             </BottomSection>
           </PricingCard>
         ))}

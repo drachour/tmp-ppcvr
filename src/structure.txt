@@ -10,6 +10,10 @@ my-portfolio/
 │   │   ├── common/
 │   │   │   ├── Lozenge.js
 │   │   │   └── Modal.js
+│   │   ├── resources/
+│   │   │   ├── LanguageContext.js
+│   │   │   └── LanguageProvider.js
+│   │   │   └── Translations.js
 │   │   ├── CardPrice.js
 │   │   ├── Experience.js
 │   │   ├── Footer.js

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import CardPrice from '../components/CardPrice';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const ServiceSection = styled.div`
 background: linear-gradient(to right, #214150, #203a43, #3a6c82);
@@ -88,63 +90,36 @@ const ProposalButton = styled.button`
 `;
 
 const Services = () => {
-    const serviceData = [
-        {
-            icon: '🖥',
-            title: 'Application Windows',
-            description: 'Developing desktop applications for Windows.'
-        },
-        {
-            icon: '💻',
-            title: 'Web Development',
-            description: 'Creating stunning websites and web apps.'
-        },
-        {
-            icon: '🤖',
-            title: 'Discord Bot',
-            description: 'Creating smart and interactive Discord bots.'
-        },
+  const { language } = React.useContext(LanguageContext);
+  const serviceTranslations = translations[language].services;
 
-        {
-            icon: '🎮',
-            title: 'Game Development',
-            description: 'Creating interactive and fun games with Unity.'
-        },
-        {
-            icon: '📱',
-            title: 'Mobile App Development',
-            description: 'Creating mobile applications for Android.'
-        },
-        {
-            icon: '🛠',
-            title: 'DevOps',
-            description: 'Automating workflows and optimizing performance.'
-        }
-    ];
+  const serviceData = serviceTranslations.cards;
 
-    return (
-        <ServiceSection>
-            <Container>
-                <SectionTitle><GradientText>My</GradientText> Experties</SectionTitle>
-                <ServiceGrid>
-                    {serviceData.map((service, index) => (
-                        <ServiceCard key={index}>
-                            <CardIcon>{service.icon}</CardIcon>
-                            <CardTitle>{service.title}</CardTitle>
-                            <CardDescription>{service.description}</CardDescription>
-                        </ServiceCard>
-                    ))}
-                </ServiceGrid>
-            </Container>
-            <DividerContainer>
-                <h1>Have Any Project In Mind?</h1>
-                <ProposalButton>Submit A Proposal</ProposalButton>
-            </DividerContainer>
-            <Container>
-                <CardPrice/>
-            </Container>
-        </ServiceSection>
-    );
+  return (
+      <ServiceSection>
+          <Container>
+              <SectionTitle>
+                  <GradientText>{serviceTranslations.sectionTitle.my}</GradientText> {serviceTranslations.sectionTitle.expertise}
+              </SectionTitle>
+              <ServiceGrid>
+                  {serviceData.map((service, index) => (
+                      <ServiceCard key={index}>
+                          <CardIcon>{service.icon}</CardIcon>
+                          <CardTitle>{service.title}</CardTitle>
+                          <CardDescription>{service.description}</CardDescription>
+                      </ServiceCard>
+                  ))}
+              </ServiceGrid>
+          </Container>
+          <DividerContainer>
+              <h1>{serviceTranslations.projectInMind}</h1>
+              <ProposalButton>{serviceTranslations.submitProposal}</ProposalButton>
+          </DividerContainer>
+          <Container>
+              <CardPrice/>
+          </Container>
+      </ServiceSection>
+  );
 };
 
 export default Services;

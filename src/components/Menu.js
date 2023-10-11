@@ -8,6 +8,8 @@ import Gallery from '../pages/Gallery';
 import Portfolio from '../pages/Portfolio';
 import Service from '../pages/Service';
 import Faq from '../pages/Faq';
+import translations from './resources/Translations';
+import LanguageContext from './resources/LanguageContext';
 
 const MenuContainer = styled.div`
   display: flex;
@@ -48,41 +50,44 @@ const Menu = ({ openModal }) => {
       openModal(content);
     };
 
+    const { language } = React.useContext(LanguageContext);
+    const menuTranslations = translations[language].menu;
+
   return (
     <MenuContainer>
         <Row>
             <Lozenge onClick={() => handleMenuItemClick(<About/>)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-person-circle"></i> ABOUT</LinkText>
+                    <LinkText><i class="bi bi-person-circle"></i>{menuTranslations.about}</LinkText>
                 </StyledLink>
             </Lozenge>
             <Lozenge onClick={() => handleMenuItemClick(<Service/>)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-gear"></i> SERVICE</LinkText>
+                    <LinkText><i class="bi bi-gear"></i>{menuTranslations.service}</LinkText>
                 </StyledLink>
             </Lozenge>
             <Lozenge onClick={() => handleMenuItemClick(<Faq/>)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-info-circle"></i> FAQ</LinkText>
+                    <LinkText><i class="bi bi-info-circle"></i>{menuTranslations.faq}</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>
         <Row>
             <Lozenge onClick={() => handleMenuItemClick(<Portfolio/>)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-folder"></i>PORTFOLIO</LinkText>
+                    <LinkText><i class="bi bi-folder"></i>{menuTranslations.portfolio}</LinkText>
                 </StyledLink>
             </Lozenge>
             <Lozenge onClick={() => handleMenuItemClick(<Gallery/>)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-image"></i>GALLERY</LinkText>
+                    <LinkText><i class="bi bi-image"></i>{menuTranslations.gallery}</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>
         <Row>
             <Lozenge onClick={() => handleMenuItemClick(<Contact />)}>
                 <StyledLink>
-                    <LinkText><i class="bi bi-person-plus"></i>CONTACT</LinkText>
+                    <LinkText><i class="bi bi-person-plus"></i>{menuTranslations.contact}</LinkText>
                 </StyledLink>
             </Lozenge>
         </Row>

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import '../css/Portfolio.css';
 import TestimonialImage from '../assets/images/Cthulhu_Transparent.png';
 import CardImage from '../assets/images/Cthulhu_bg.png';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const FilterButton = styled.button`
   background: linear-gradient(to right, #4a90e2, #8e44ad);
@@ -101,79 +103,45 @@ const SingleBox = styled.div`
 `;
 
 const Portfolio = () => {
+    const { language } = React.useContext(LanguageContext);
+    const portfolioTranslations = translations[language].portfolio;
+
     return (
         <div className="portfolio-container">
             <div className="container">
                 <h2 className="section-title text-center my-5">
-                    Take A Look On My Past
+                    {portfolioTranslations.sectionTitle}
                 </h2>
 
                 <div className="text-center mb-4 filter-buttons">
-                    <FilterButton>Show All</FilterButton>
-                    <FilterButton>Web Design</FilterButton>
+                    <FilterButton>{portfolioTranslations.filterButtons.showAll}</FilterButton>
+                    <FilterButton>{portfolioTranslations.filterButtons.webDesign}</FilterButton>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-4">
-                        <CardContent>
-                            <CardTop>
-                                <img src={CardImage} className="card-image" alt="Project image2" />
-                            </CardTop>
-                            <CardMiddle>
-                                <CardTitle>Application Windows</CardTitle>
-                                <h5 className="card-title">AEC UWP Client</h5>
-                                <CardTime>
-                                    <span>Start: 01/01/2022</span>
-                                    <span>End: 12/23/2023</span>
-                                </CardTime>
-                            </CardMiddle>
-                            <CardBottom>
-                                <SubmitButton className="btn btn-primary visit-button">Visit Site</SubmitButton>
-                            </CardBottom>
-                        </CardContent>
-                    </div>
-                    <div className="col-md-4">
-                        <CardContent>
-                            <CardTop>
-                                <img src={CardImage} className="card-image" alt="image2" />
-                            </CardTop>
-                            <CardMiddle>
-                                <CardTitle>Discord Bot</CardTitle>
-                                <h5 className="card-title">Cthulhu Bot</h5>
-                                <CardTime>
-                                    <span>Start: 09/10/2023</span>
-                                    <span>End: -</span>
-                                </CardTime>
-                            </CardMiddle>
-                            <CardBottom>
-                                <SubmitButton className="btn btn-primary visit-button">Visit Site</SubmitButton>
-                            </CardBottom>
-                        </CardContent>
-                    </div>
-                    <div className="col-md-4">
-                        <CardContent>
-                            <CardTop>
-                                <img src={CardImage} className="card-image" alt="Project" />
-                            </CardTop>
-                            <CardMiddle>
-                                <CardTitle>Java Application</CardTitle>
-                                <h5 className="card-title">Fortis Bank</h5>
-                                <CardTime>
-                                    <span>Start: 01/01/2023</span>
-                                    <span>End: 06/01/2023</span>
-                                </CardTime>
-                            </CardMiddle>
-                            <CardBottom>
-                                <SubmitButton className="btn btn-primary visit-button">Visit Site</SubmitButton>
-                            </CardBottom>
-                        </CardContent>
-                    </div>
+                    {portfolioTranslations.cards.map((card, index) => (
+                        <div className="col-md-4" key={index}>
+                            <CardContent>
+                                <CardTop>
+                                    <img src={CardImage} className="card-image" alt="Project image" />
+                                </CardTop>
+                                <CardMiddle>
+                                    <CardTitle>{card.type}</CardTitle>
+                                    <h5 className="card-title">{card.title}</h5>
+                                    <CardTime>
+                                        <span>{card.startDate}</span>
+                                        <span>{card.endDate}</span>
+                                    </CardTime>
+                                </CardMiddle>
+                                <CardBottom>
+                                    <SubmitButton className="btn btn-primary visit-button">{portfolioTranslations.visitButton}</SubmitButton>
+                                </CardBottom>
+                            </CardContent>
+                        </div>
+                    ))}
                 </div>
-                
             </div>
-
             <Divider />
-
             <Testimonial>
                 <SingleBox>
                     <div>

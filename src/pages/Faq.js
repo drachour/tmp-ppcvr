@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const FaqContent = styled.div`
   padding: 40px 0;
@@ -48,79 +50,46 @@ const FaqBody = styled.div`
 `;
 
 const Faq = () => {
-    const [isOpen, setIsOpen] = useState(null);
+  const { language } = useContext(LanguageContext);
+  const faqTranslations = translations[language].faq;
 
-    const toggleFaq = index => {
-        setIsOpen(isOpen === index ? null : index);
-    };
+  const [isOpen, setIsOpen] = useState(null);
 
-    const faqs = [
-        {
-            question: 'How long does it take to build a website?',
-            answer: 'The time it takes to build a website can vary depending on the complexity and requirements. Generally, a simple website can take 2-4 weeks.',
-        },
-        {
-            question: 'Do you redesign existing websites?',
-            answer: 'Yes, we do offer redesign services for existing websites.',
-        },
-        {
-            question: 'Do you work internationally?',
-            answer: 'Yes, we work with clients from all over the world.',
-        },
-        {
-            question: 'Will my website work on smartphones and tablets?',
-            answer: 'Absolutely, we ensure all our designs are fully responsive and compatible with different devices.',
-        },
-        {
-            question: 'Can you help me rank high in Google?',
-            answer: 'Yes, we offer SEO services to help your website rank higher in search engines.',
-        },
-        {
-            question: 'How much does a website cost?',
-            answer: 'The cost of a website depends on various factors such as features, complexity, and design elements. Contact us for a detailed quote.',
-        },
-        {
-            question: 'Do you offer maintenance services?',
-            answer: 'Yes, we offer various maintenance packages to keep your website up to date.',
-        },
-        {
-            question: 'Can I update the website myself?',
-            answer: 'If your website is built on a CMS, you can update content yourself. We also provide a guide on how to do so.',
-        },
-    ];
+  const toggleFaq = index => {
+    setIsOpen(isOpen === index ? null : index);
+  };
 
-    return (
-        <FaqContent>
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-12">
-                        <SectionTitle>Frequently Asked <GradientText>Questions</GradientText></SectionTitle>
-                    </div>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-xl-8 col-lg-10">
+  return (
+    <FaqContent>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <SectionTitle>{faqTranslations.title} <GradientText>{faqTranslations.gradientText}</GradientText> </SectionTitle>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-xl-8 col-lg-10">
+            {faqTranslations.faqs.map((faq, index) => (
+              <FaqBox key={index}>
+                <SingleCard>
+                  <FaqHeader onClick={() => toggleFaq(index)} isOpen={isOpen === index}>
+                    <h3>{faq.question}</h3>
+                    <IconBox>
+                      <FontAwesomeIcon icon={isOpen === index ? faMinus : faPlus} />
+                    </IconBox>
+                  </FaqHeader>
+                  <FaqBody isOpen={isOpen === index}>
+                    <p>{faq.answer}</p>
+                  </FaqBody>
+                </SingleCard>
 
-                        {faqs.map((faq, index) => (
-                            <FaqBox>
-                                <SingleCard key={index}>
-                                    <FaqHeader onClick={() => toggleFaq(index)} isOpen={isOpen === index}>
-                                        <h3>{faq.question}</h3>
-                                        <IconBox>
-                                            <FontAwesomeIcon icon={isOpen === index ? faMinus : faPlus} />
-                                        </IconBox>
-                                    </FaqHeader>
-                                    <FaqBody isOpen={isOpen === index}>
-                                        <p>{faq.answer}</p>
-                                    </FaqBody>
-                                </SingleCard>
-
-                            </FaqBox>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </FaqContent>
-    );
+              </FaqBox>
+            ))}
+          </div>
+        </div>
+      </div>
+    </FaqContent>
+  );
 };
 
 export default Faq;

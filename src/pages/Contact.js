@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import myImage from '../assets/images/backCoverDiscord-removebg-preview.png';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const GradientText = styled.span`
   background: linear-gradient(to right, #4a90e2, #8e44ad);
@@ -176,20 +178,22 @@ const GradientDefs = () => (
 );
 
 const Contact = () => {
+  const { language } = React.useContext(LanguageContext);
+  const contactTranslations = translations[language].contact;
   return (
     <ContactContainer>
-      <ContactTitle>Get In Touch With <GradientText>Me</GradientText></ContactTitle>
+      <ContactTitle>{contactTranslations.getInTouch} <GradientText>{contactTranslations.me}</GradientText></ContactTitle>
       <BoxGrid>
         <ContactForm>
-          <Input type="text" placeholder="Your full name" />
-          <Input type="email" placeholder="Your email address" />
-          <Input type="text" placeholder="Subject" />
-          <TextArea rows="4" placeholder="Write your message"></TextArea>
-          <SubmitButton type="submit">Send Message</SubmitButton>
+          <Input type="text" placeholder={contactTranslations.yourFullName} />
+          <Input type="email" placeholder={contactTranslations.emailAddress} />
+          <Input type="text" placeholder={contactTranslations.subject} />
+          <TextArea rows="4" placeholder={contactTranslations.message}></TextArea>
+          <SubmitButton type="submit">{contactTranslations.sendMsg}</SubmitButton>
         </ContactForm>
         <ContactInformation>
-        <BackgroundImage />
-        <GradientOverlay />
+          <BackgroundImage />
+          <GradientOverlay />
           <GradientDefs />
           <SingleBox>
             <IconBox>
@@ -200,7 +204,7 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>+1 555 555-5555</span>
+              <span>{contactTranslations.phone}</span>
             </TextInfo>
           </SingleBox>
           <SingleBox>
@@ -212,8 +216,8 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>contact@exemple.ca</span>
-              <span>support@exemple.ca</span>
+              <span>{contactTranslations.emailMain}</span>
+              <span>{contactTranslations.emailSupport}</span>
             </TextInfo>
           </SingleBox>
           <SingleBox>
@@ -225,8 +229,8 @@ const Contact = () => {
               </svg>
             </IconBox>
             <TextInfo>
-              <span>1 Rang, Montréal, Québec</span>
-              <span>E0E E0E, Canada</span>
+              <span>{contactTranslations.address}</span>
+              <span>{contactTranslations.postalCode}</span>
             </TextInfo>
           </SingleBox>
         </ContactInformation>

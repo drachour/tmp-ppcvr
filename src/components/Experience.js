@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import translations from './resources/Translations';
+import LanguageContext from './resources/LanguageContext';
 
 const Education = styled.div`
   padding: 2rem;
@@ -85,71 +87,41 @@ const EmptyBoxRight = styled.div`
 
 
 const Experience = () => {
+  const { language } = React.useContext(LanguageContext);
+  const experienceTranslations = translations[language].experience;
+
   return (
     <Education>
       <Container>
         <Row>
           <ColMd6>
-            <SectionTitle>Education</SectionTitle>
-            <BoxGrid>
-              <SingleBox>
-                <Duration>01/2022 – 12/2023</Duration>
-                <Title>Programmeur Analyste</Title>
-                <p>Collège Lasalle, Montréal, Québec</p>
-              </SingleBox>
-              <EmptyBox></EmptyBox>
-            </BoxGrid>
-            <BoxGrid>         
-            <EmptyBoxLeft></EmptyBoxLeft>
-              <SingleBox>
-                <Duration>10/2022</Duration>
-                <Title>C# Certificate Of Completion</Title>
-                <p>W3Schools</p>
-              </SingleBox>
-            </BoxGrid>
-            <BoxGrid>     
-              <SingleBox>
-                <Duration>05/2022</Duration>
-                <Title>IT Essentials</Title>
-                <p>Cisco - Networking Academy</p>
-              </SingleBox>
-              <EmptyBoxRight></EmptyBoxRight>
-            </BoxGrid>
+            <SectionTitle>{experienceTranslations.educationTitle}</SectionTitle>
+            {experienceTranslations.eductionCards.map((education, index) => (
+              <BoxGrid key={index}>
+                {index % 2 === 0 && <EmptyBoxLeft />}
+                <SingleBox>
+                  <Duration>{education.duration}</Duration>
+                  <Title>{education.title}</Title>
+                  <p>{education.location}</p>
+                </SingleBox>
+                {index % 2 === 1 && <EmptyBoxRight />}
+              </BoxGrid>
+            ))}
           </ColMd6>
+
           <ColMd6>
-            <SectionTitle>Experience</SectionTitle>
-            <BoxGrid>
-              <SingleBox>
-                <Duration>2017 - Now</Duration>
-                <Title>Programmeur Analyste</Title>
-                <p>Personnel | Lacolle, Québec | Freelance</p>
-              </SingleBox>
-              <EmptyBox></EmptyBox>
-            </BoxGrid>
-            <BoxGrid>
-              <EmptyBoxLeft></EmptyBoxLeft>
-              <SingleBox>
-                <Duration>2020 - 2022</Duration>
-                <Title>Web Dev</Title>
-                <p>Les Entreprises J.F. Faucher Inc. | La Prairie, Québec</p>
-              </SingleBox>
-            </BoxGrid>
-            <BoxGrid>
-              <SingleBox>
-                <Duration>2017 - 2022</Duration>
-                <Title>IT</Title>
-                <p>Les Entreprises J.F. Faucher Inc. | La Prairie, Québec</p>
-              </SingleBox>
-              <EmptyBoxRight></EmptyBoxRight>
-            </BoxGrid>
-            <BoxGrid>
-              <EmptyBoxLeft></EmptyBoxLeft>
-              <SingleBox>
-                <Duration>2015 - 2017</Duration>
-                <Title>Information department team leader</Title>
-                <p>Les Entreprises J.F. Faucher Inc. | La Prairie, Québec</p>
-              </SingleBox>
-            </BoxGrid>
+            <SectionTitle>{experienceTranslations.experienceTitle}</SectionTitle>
+            {experienceTranslations.experienceCards.map((experience, index) => (
+              <BoxGrid key={index}>
+                {index % 2 === 0 && <EmptyBoxLeft />}
+                <SingleBox>
+                  <Duration>{experience.duration}</Duration>
+                  <Title>{experience.title}</Title>
+                  <p>{experience.location}</p>
+                </SingleBox>
+                {index % 2 === 1 && <EmptyBoxRight />}
+              </BoxGrid>
+            ))}
           </ColMd6>
         </Row>
       </Container>

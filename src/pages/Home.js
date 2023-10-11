@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menu from '../components/Menu';
+import translations from '../components/resources/Translations';
+import LanguageContext from '../components/resources/LanguageContext';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -44,18 +46,22 @@ const Description = styled.p`
 `;
 
 const Home = ({ openModal }) => {
+  const { language } = React.useContext(LanguageContext);
+  const homeTranslations = translations[language].home;
   return (
     <HomeContainer>
-      <Subtitle>Hello!</Subtitle>
+      <Subtitle>{homeTranslations.subtitle}</Subtitle>
       <TitleWrapper>
-        <GradientTextTitle>I'M</GradientTextTitle>
-        <Title>Gael Achour</Title>
+        <GradientTextTitle>{homeTranslations.gradientTitle}</GradientTextTitle>
+        <Title>{homeTranslations.title}</Title>
       </TitleWrapper>
-      <Subtitle>Back End Developer</Subtitle>
+      <Subtitle>{homeTranslations.subtitleRole}</Subtitle>
       <Description>
-        I am Gael Achour. <br />
-        I am simple, creative, enthusiastic, and autonomous. <br />
-        I always like to create new and interesting programs and templates that will be helpful for others
+      {homeTranslations.description[0]}
+      <br/>
+      {homeTranslations.description[1]}
+      <br/>
+      {homeTranslations.description[2]}
       </Description>
       <Menu openModal={openModal} />
     </HomeContainer>
