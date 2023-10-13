@@ -4,7 +4,10 @@ const translations = {
         about: {
             title: "About",
             me: "Me",
-            description: "I'm a professional back-end developer. My motive is to build the best web or app developer with my years of experience.",
+            description: [
+                "I'm a professional back-end developer.",
+                "My motive is to build the best web or app developer with my years of experience."
+            ],
             graphicsSkill: "Graphics",
             developingSkill: "Developing",
             writingSkill: "Writing",
